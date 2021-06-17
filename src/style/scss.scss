@@ -1,0 +1,188 @@
+$orange_color: #FCDD6F;
+
+
+@mixin text_style($font_size, $line_height) {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: $font_size;
+    line-height: $line_height;
+  }
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 377px;
+    
+    border-top: 5px solid black;
+
+    .nav{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        background-color: $orange_color;
+        
+    
+        .fa-github{
+            font-size: 50px;
+        }
+
+        &_item{
+            display: flex;
+            justify-content: center;
+            margin-top: 3px;
+        }
+
+        &_text{
+            @include text_style(18px, 21px);
+            margin: 0 auto;
+            width: 213px;
+            font-weight: normal;
+            margin-top: 2px;
+            margin-bottom: 4px;
+        }
+
+    }
+
+    .refresh{
+        display: flex;
+        justify-content: center;
+        background-color: $orange_color;
+
+        &_btn{
+            margin: 0 auto;
+        }
+    }
+
+    .content{
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+
+
+        &_user{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100px;
+            position: relative;
+            left: 109px;
+            border-bottom: 1px solid #C9C9C9;
+
+            &_image{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                left: -109px;
+                border-bottom: 1px solid  #C9C9C9;
+
+                min-width: 100px;
+                max-width: 100px;
+                height: 100%;
+                
+
+                &_img{
+                    min-width: 72px;
+                    max-width: 72px;
+                    height: 72px;
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                    border-radius: 100px;
+                }
+
+            }
+
+            
+
+            &_text{
+                position: relative;
+                left: -109px;
+                min-width: 220px;
+                height: 72px;
+
+
+                &_name{
+                    @include text_style(24px, 28px);
+                }
+
+                &_location{
+                    @include text_style(14px, 16px);
+                }
+
+                &_login{
+                    @include text_style(14px, 16px);
+                    text-decoration: underline;
+                    color: #C7C7C7;
+                }
+
+            }
+
+            &_item{
+                position: relative;
+                left: -83px;
+            }
+
+            &_button{
+                display: flex;
+                justify-content: center;
+                height: 100%;
+                min-width: 109px;
+                background-color: #E37171;
+                position: relative;
+                left: -79px;
+                &_btn{
+                    background-color: #E37171;
+                    border: none;
+                    font-size: 40px;
+                    
+                    
+                }
+                
+               
+            }
+
+            .fa-chevron-right{
+                font-size: 50px;
+            }
+
+            &:hover{
+                animation-name: animation_position;
+                animation-duration: 3s;
+                animation-fill-mode: forwards;
+                
+            }
+
+
+            @keyframes animation_position {
+                0%{
+                    left: 109px;
+                }
+                100%{
+                    left: 0px;
+                }
+            }
+        }
+    }
+    
+
+    .refresh{
+        display: flex;
+        justify-content: center;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        &_btn{
+            @include text_style(18px, 21px);
+            border: none;
+            background-color: $orange_color;
+            margin: 0;
+        }
+
+        .fa-sync-alt{
+            margin-top: 2px;
+        }
+    }
+}
+
